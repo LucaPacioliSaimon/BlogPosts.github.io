@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Creative Blog</title>
+
+  <style>
+    /* 🌸 Aesthetic background gradient */
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      margin: 0;
+      padding: 0;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* 🌟 Header Style */
+    header {
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(8px);
+      color: #222;
+      text-align: center;
+      padding: 25px;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    /* 🌈 Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.4);
+    }
+
+    nav button {
+      background: none;
+      color: #222;
+      border: none;
+      padding: 14px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s ease;
+    }
+
+    nav button:hover {
+      color: #fff;
+      background: #4a90e2;
+      border-radius: 20px;
+    }
+
+    /* 📄 Tab Content */
+    .tab {
+      display: none;
+      padding: 30px;
+      animation: fadeIn 1s ease-in-out;
+      min-height: 80vh;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .active {
+      display: block;
+    }
+
+    /* 👥 Authors Section */
+    .authors {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .author-card {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 220px;
+      transition: transform 0.3s ease;
+    }
+
+    .author-card:hover {
+      transform: scale(1.05);
+    }
+
+    .author-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    /* 🎧 Voice Recording Player */
+    audio {
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    /* 🧁 Content Box Design */
+    .content-box {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: 20px auto;
+      transition: 0.3s ease;
+    }
+
+    .content-box:hover {
+      transform: scale(1.02);
+    }
+
+    h2, h3 {
+      color: #2c3e50;
+    }
+  </style>
+</head>
+
+<body>
+  <header>🌸 My Creative Blog</header>
+
+  <nav>
+    <button onclick="openTab('authors')">Tab 1: Authors</button>
+    <button onclick="openTab('content')">Tab 2: Content</button>
+  </nav>
+
+  <!-- TAB 1: AUTHORS -->
+  <section id="authors" class="tab active">
+    <h2>👩‍💻 Meet the Authors & Editors</h2>
+    <p style="text-align:center;">Get to know the brilliant minds behind this blog ✨</p>
+
+    <div class="authors">
+      <div class="author-card">
+        <img src="author1.jpg" alt="Author 1">
+        <h3>John Saimon Novenario</h3>
+        <p><strong>Lead Author & Editor</strong></p>
+        <p>Passionate about storytelling, creativity, and technology 💡</p>
+      </div>
+
+      <div class="author-card">
+        <img src="author2.jpg" alt="Editor 2">
+        <h3>Luca Reyes</h3>
+        <p><strong>Co-Editor</strong></p>
+        <p>Loves turning words into visuals that spark imagination 🎨</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 2: CONTENT -->
+  <section id="content" class="tab">
+    <h2>📰 Blog Content</h2>
+    <p style="text-align:center;">Explore our stories, reflections, and creative works 🌼</p>
+
+    <div class="content-box">
+      <h3>✨ Featured Story: “When Machines Take the Ledger”</h3>
+      <p>
+        In a world driven by automation, the accounting profession faces an evolution.
+        What was once manual and time-consuming is now handled by intelligent systems
+        that think, record, and analyze in real-time.
+      </p>
+      <p>
+        But can machines truly replace human intuition and ethical judgment?
+        Dive into our reflection and find out.
+      </p>
+    </div>
+
+    <div class="content-box">
+      <h3>🎧 Voice Recording:</h3>
+      <audio controls>
+        <source src="voice.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </section>
+
+  <script>
+    function openTab(tabName) {
+      const tabs = document.getElementsByClassName("tab");
+      for (let tab of tabs) tab.classList.remove("active");
+      document.getElementById(tabName).classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  </script>
+</body>
+</html>
